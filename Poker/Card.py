@@ -1,6 +1,10 @@
 """Card class to keep track of the suit and value of a card"""
 
 class Card:
+
+    """
+    Number is a dictionary that maps the value of the card to the number
+"""  
     
     Number = {
         2: "2",
@@ -16,7 +20,9 @@ class Card:
         12: "Q",
         13: "K",
         14: "A",}
-
+    """
+    Type is a dictionary that maps the suit of the card to the symbol
+""" 
     Type = {
         3: u"\u2665",  # Hearts
         2: u"\u2666",  # Diamonds

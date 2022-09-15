@@ -2,7 +2,7 @@ import unittest
 from Poker.Card import Card
 from Poker.Evaluator import Evaluator
 
-"""Unit test for the Straight Hand scenario"""
+"""Unit test for the Straight Three of a Kind scenario"""
 
 class Straight_Flush(unittest.TestCase):
 

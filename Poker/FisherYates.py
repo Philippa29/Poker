@@ -6,7 +6,12 @@ class FisherYates(Shuffle):
     
     def __init__(self,deck: Deck):
         super().__init__(deck)
-    
+        """ 
+    class shuffle:
+        checks if hand is a flush
+        arguments: none 
+        returns: shuffled hand
+    """  
     def shuffle(self):
         num_cards = 5
         self.shuffled_deck = self.fisher_yates()
@@ -15,7 +20,12 @@ class FisherYates(Shuffle):
             for i in range(num_cards):
                 shuffled_hand.append(self.deck.cards.pop())
         return shuffled_hand
-    
+    """ 
+    class fisher_yates:
+        does the actual shuffling
+        arguments: none 
+        returns: shuffled cards
+    """  
     def fisher_yates(self):
         cards = self.deck.cards
         for i in range(len(cards) - 1, 0, -1):

@@ -2,7 +2,7 @@ import unittest
 from Poker.Card import Card
 from Poker.Evaluator import Evaluator
 
-"""Unit test for the Straight Hand scenario"""
+"""Unit test for the Four of a Kind scenario"""
 
 class Four_of_a_Kind(unittest.TestCase):
 

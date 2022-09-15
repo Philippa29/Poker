@@ -2,6 +2,10 @@ from .Card import Card
 from typing import List
 import collections
 
+""" 
+    class Evaluator:
+    takes in list of cards and returns the best hand
+""" 
 class Evaluator:
     def __init__(self, hand: List[Card]):
         self.hands = hand
@@ -19,7 +23,12 @@ class Evaluator:
             elif self.hands[i].suit == "♥":
                 new_hand.append("H" + self.hands[i].value)
         self.hands = new_hand
-    
+    """ 
+    class check_flush:
+        checks if hand is a flush
+        arguments: none 
+        returns: boolean
+    """    
 
     def check_flush(self):
         suits = [h[0] for h in self.hands]
@@ -27,13 +36,23 @@ class Evaluator:
             return True
         else:
             return False
-    
+    """ 
+    class check_straight_flush:
+        checks if hand is a straight flush
+        arguments: none 
+        returns: boolean
+    """      
     def check_straight_flush(self):
         if self.check_flush() and self.check_straight():
             return True
         else:
             return False
-
+    """ 
+    class check_straight:
+        checks if hand is a straight
+        arguments: none 
+        returns: boolean
+    """  
     def check_straight(self):
         rank_values = []
         values = [i[1] for i in self.hands]
@@ -75,7 +94,13 @@ class Evaluator:
             if set(values) == set(["A", "2", "3", "4", "5"]):
                 return True
         return False
-    
+
+    """ 
+    class check_four_of_a_kind:
+        checks if hand is a four of a kind
+        arguments: none 
+        returns: boolean
+    """      
     def check_four_of_a_kind(self):
         values = [i[1] for i in self.hands]
         value_counts = collections.defaultdict(lambda:0)
@@ -84,7 +109,12 @@ class Evaluator:
         if sorted(value_counts.values()) == [1,4]:
             return True
         return False
-    
+    """ 
+    class check_full_house:
+        checks if hand is a full house
+        arguments: none 
+        returns: boolean
+    """  
     def check_full_house(self):
         values = [i[1] for i in self.hands]
         value_counts = collections.defaultdict(lambda:0)
@@ -93,7 +123,12 @@ class Evaluator:
         if sorted(value_counts.values()) == [2,3]:
             return True
         return False
-    
+    """ 
+    class check_three_of_a_kind:
+        checks if hand is a three of a kind
+        arguments: none 
+        returns: boolean
+    """  
     def check_three_of_a_kind(self):
         values = [i[1] for i in self.hands]
         value_counts = collections.defaultdict(lambda:0)
@@ -103,7 +138,12 @@ class Evaluator:
             return True
         else:
             return False
-
+    """ 
+    class check_two_pairs:
+        checks if hand is a two pairs
+        arguments: none 
+        returns: boolean
+    """  
     def check_two_pairs(self):
         values = [i[1] for i in self.hands]
         value_counts = collections.defaultdict(lambda:0)
@@ -113,7 +153,12 @@ class Evaluator:
             return True
         else:
             return False
-
+    """ 
+    class check_one_pairs:
+        checks if hand is a flush
+        arguments: none 
+        returns: boolean
+    """  
     def check_one_pairs(self):
         values = [i[1] for i in self.hands]
         value_counts = collections.defaultdict(lambda:0)
@@ -123,7 +168,12 @@ class Evaluator:
             return True
         else:
             return False
-
+    """ 
+    class check_high_card:
+        checks if hand is a flush
+        arguments: none 
+        returns: boolean
+    """  
     def check_high_card(self):
         values = [i[1] for i in self.hands]
         value_counts = collections.defaultdict(lambda:0)
@@ -133,7 +183,12 @@ class Evaluator:
             return True
         else:
             return False
-
+    """ 
+    class check_hand:
+        checks what hand is
+        arguments: none 
+        prints the type of hand
+    """  
     def check_hand(self):
         if self.check_straight_flush():
             print("Straight Flush")
